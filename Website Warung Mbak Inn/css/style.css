@@ -91,11 +91,21 @@ html {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background-image: url("../img/hero-img.jpg");
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-size: cover;
   background-position: center;
   position: relative;
+}
+
+.hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  max-height: 100%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  z-index: -1;
 }
 
 .hero::after {
@@ -179,6 +189,8 @@ html {
 
 .about .row .about-img img {
   width: 100%;
+  border-radius: 5%;
+  box-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
 }
 
 .about .row .content {
@@ -232,6 +244,7 @@ html {
 .barang .row .menu-card img {
   border-radius: 50%;
   width: 80%;
+  box-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
 }
 
 .barang .row .menu-card .menu-card-title {
@@ -367,6 +380,10 @@ footer .credit a:hover {
 
   #hamburger-menu {
     display: inline-block;
+  }
+
+  .navbar .navbar-logo {
+    font-size: 1.8rem;
   }
 
   .navbar .navbar-nav {
