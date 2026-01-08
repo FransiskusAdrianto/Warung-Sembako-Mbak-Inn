@@ -196,13 +196,15 @@ html {
 /* about section */
 .about,
 .barang,
-.contact {
+.contact,
+.products {
   padding: 8rem 7% 1.4rem;
 }
 
 .about h3,
 .barang h3,
-.contact h3 {
+.contact h3,
+.products h3 {
   text-align: center;
   font-size: 2.6rem;
   margin-bottom: 3rem;
@@ -210,7 +212,8 @@ html {
 
 .about h3 span,
 .barang h3 span,
-.contact h3 span {
+.contact h3 span,
+.products h3 span {
   color: var(--primary);
 }
 
@@ -250,7 +253,8 @@ html {
 /* barang section */
 
 .barang p,
-.contact p {
+.contact p,
+.products p {
   text-align: center;
   max-width: 40rem;
   margin: auto;
@@ -260,7 +264,8 @@ html {
 }
 
 .barang h3,
-.contact h3 {
+.contact h3,
+.products h3 {
   margin-bottom: 1rem;
 }
 
@@ -282,18 +287,47 @@ html {
   box-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
 }
 
-.barang .row .menu-card .menu-card-title {
+.barang .row .menu-card .menu-card-title,
+.products .row .product-content h5 {
   margin: 1rem auto 0.5rem;
   font-size: 1.1rem;
 }
 
-.barang .row .menu-card .menu-card-price {
+.barang .row .menu-card .menu-card-price,
+.products .row .product-content .product-price {
   font-size: 1rem;
+  font-weight: 300;
 }
 
-.barang .row .menu-card .menu-card-price span {
+.barang .row .menu-card .menu-card-price span,
+.products .row .product-content .product-price span {
   font-size: 1.2rem;
   font-weight: 500;
+}
+
+/* product section */
+.products .row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 1.5rem;
+  margin-top: 4rem;
+}
+
+.products .row .product-card {
+  text-align: center;
+  border: 1px solid #8b8b8b;
+  padding: 2rem;
+}
+
+.products .row .product-card .product-icons {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.products .row .product-card .product-icons {
+  width: 4rem;
+  height: 4rem;
 }
 
 /* contact section */
