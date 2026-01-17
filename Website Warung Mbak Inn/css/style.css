@@ -194,7 +194,7 @@ html {
   top: 50%;
   left: 50%;
   width: 100vw;
-  height: 100vh;
+  height: 99vh;
   transform: translate(-50%, -50%);
   object-fit: cover;
   z-index: -1;
@@ -547,11 +547,25 @@ footer .credit a:hover {
   border: 1px solid #666;
   width: 80%;
   height: auto;
+  animation: animateModal 0.5s;
+}
+
+/* modal animation */
+@keyframes animateModal {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
 }
 
 .modal .modal-container .close-icon {
   position: absolute;
   right: 1rem;
+  color: black;
 }
 
 .modal .modal-container .modal-content {
