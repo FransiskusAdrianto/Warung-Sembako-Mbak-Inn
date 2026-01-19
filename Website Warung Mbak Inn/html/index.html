@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -15,6 +15,15 @@
 
     <!-- icons -->
     <script src="https://unpkg.com/feather-icons"></script>
+
+    <!-- alpine js -->
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+
+    <!-- app -->
+    <script src="../javascript/app.js"></script>
 
     <!-- my style -->
     <link rel="stylesheet" href="../css/style.css" />
@@ -179,7 +188,7 @@
     <!-- menu section end -->
 
     <!-- product section start -->
-    <section class="products" id="products">
+    <section class="products" id="products" x-data="products">
       <h3>Pesan <span>Barang</span></h3>
       <p>
         Kami menyediakan layanan antar barang yang anda pesan menuju ke rumah
@@ -187,50 +196,32 @@
       </p>
 
       <div class="row">
-        <div class="product-card">
-          <div class="product-icons">
-            <a href="#"><i data-feather="shopping-cart"></i></a>
-            <a href="#" class="item-detail-button"
-              ><i data-feather="eye"></i
-            ></a>
-          </div>
-          <div class="product-image">
-            <img src="../img/3.jpg" alt="Gas" />
-          </div>
-          <div class="product-content">
-            <h5>~ Gas ~</h5>
-            <div class="product-stars">
-              <i data-feather="star" class="stars-full"></i>
-              <i data-feather="star" class="stars-full"></i>
-              <i data-feather="star" class="stars-full"></i>
-              <i data-feather="star" class="stars-full"></i>
-              <i data-feather="star" class="stars-full"></i>
+        <template x-for="(item, index) in items" x-key="index">
+          <div class="product-card">
+            <div class="product-icons">
+              <a href="#"><i data-feather="shopping-cart"></i></a>
+              <a href="#" class="item-detail-button"
+                ><i data-feather="eye"></i
+              ></a>
             </div>
-            <div class="product-price">IDR <span>22,000.00</span>/Satuan</div>
-          </div>
-        </div>
-        <div class="product-card">
-          <div class="product-icons">
-            <a href="#"><i data-feather="shopping-cart"></i></a>
-            <a href="#" class="item-detail-button"
-              ><i data-feather="eye"></i
-            ></a>
-          </div>
-          <div class="product-image">
-            <img src="../img/2.jpg" alt="Telur" />
-          </div>
-          <div class="product-content">
-            <h5>~ Telur ~</h5>
-            <div class="product-stars">
-              <i data-feather="star" class="stars-full"></i>
-              <i data-feather="star" class="stars-full"></i>
-              <i data-feather="star" class="stars-full"></i>
-              <i data-feather="star" class="stars-full"></i>
-              <i data-feather="star"></i>
+            <div class="product-image">
+              <img :src="`../img/${item.img}`" :alt="item.name" />
             </div>
-            <div class="product-price">IDR <span>26,000.00</span>/Kg</div>
+            <div class="product-content">
+              <h5 x-text="item.name"></h5>
+              <div class="product-stars">
+                <i data-feather="star" class="stars-full"></i>
+                <i data-feather="star" class="stars-full"></i>
+                <i data-feather="star" class="stars-full"></i>
+                <i data-feather="star" class="stars-full"></i>
+                <i data-feather="star" class="stars-full"></i>
+              </div>
+              <div class="product-price">
+                IDR <span x-text="item.price"></span>/Satuan
+              </div>
+            </div>
           </div>
-        </div>
+        </template>
       </div>
     </section>
     <!-- product section end -->
