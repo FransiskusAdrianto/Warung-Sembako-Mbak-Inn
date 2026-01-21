@@ -73,14 +73,35 @@
               <h5 x-text="item.name"></h5>
               <div class="item-price">
                 <span x-text="rupiah(item.price)"></span> &times;
-                <button id="remove">&minus;</button>
+                <button id="remove" @click="$store.cart.remove(item.id)">
+                  &minus;
+                </button>
                 <span x-text="item.quantity"></span>
-                <button id="add">&plus;</button> &equals;
-                <span x-text="item.total"></span>
+                <button id="add" @click="$store.cart.add(item)">&plus;</button>
+                &equals;
+                <span x-text="rupiah(item.total)"></span>
               </div>
             </div>
           </div>
         </template>
+        <div id="empty-cart" x-show="!$store.cart.items.length">
+          Keranjang masih kosong
+        </div>
+        <div id="total-detail" x-show="$store.cart.items.length">
+          Total: <span x-text="rupiah($store.cart.total)"></span>
+        </div>
+
+        <div class="checkout-container">
+          <button
+            class="checkout-button"
+            type="submit"
+            id="checkout-button"
+            value="checkout"
+            x-show="$store.cart.items.length"
+          >
+            Bayar
+          </button>
+        </div>
       </div>
       <!-- shopping cart end -->
     </nav>
