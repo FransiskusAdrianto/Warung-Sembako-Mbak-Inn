@@ -122,6 +122,22 @@ html {
 }
 
 /* navbar shopping cart */
+
+#shooping-cart {
+  position: relative;
+}
+
+#shooping-cart .quantity-badge {
+  display: inline-block;
+  padding: 1px 5px;
+  background-color: red;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  position: absolute;
+  top: 0;
+  right: -10px;
+}
+
 .shopping-cart {
   position: absolute;
   top: 100%;
@@ -149,14 +165,13 @@ html {
 }
 
 .shopping-cart .cart-items img {
-  height: 6rem;
+  height: 4rem;
   border-radius: 50%;
   box-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
 }
 
 .shopping-cart h5 {
   font-size: 1.3rem;
-  padding-bottom: 0.5rem;
 }
 
 .shopping-cart .cart-items .item-price {
@@ -168,14 +183,17 @@ html {
   font-weight: 500;
 }
 
-.shopping-cart .cart-items .remove-item {
-  position: absolute;
-  right: 1rem;
+.shopping-cart .cart-items #add,
+.shopping-cart .cart-items #remove {
+  display: inline-block;
+  padding: 2px 5px;
   cursor: pointer;
-}
-
-.shopping-cart .cart-items .remove-item:hover {
-  color: var(--bg);
+  margin: 0 8px;
+  background-color: var(--bg);
+  color: #000000;
+  font-weight: bold;
+  font-size: 1.1rem;
+  border-radius: 20%;
 }
 
 /* hero section */
